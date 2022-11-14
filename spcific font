@@ -1,0 +1,7 @@
+[module/launch-spotify]
+type = custom/text
+content-foreground = ${colors.green}
+content-background = ${colors.surface0}
+content = " "
+click-left = exec spotify
+content-font = 6
