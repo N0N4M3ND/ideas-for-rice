@@ -1,4 +1,3 @@
 delete the .desktop files in /usr/share/applications for a cleaner look
  $ xrandr --output exrernal-monitor --same-as monitor
  for duplicating the laptop mon
-try 99.5% in polybarsize
