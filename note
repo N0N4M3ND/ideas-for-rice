@@ -2,3 +2,4 @@ delete the .desktop files in /usr/share/applications for a cleaner look
  $ xrandr --output exrernal-monitor --same-as monitor
  for duplicating the laptop mon
  day ,number month
+layout : menu dot music dot xwindow bigspace workspaces bigspace brightness audio battery wifi dot time dot powermenu
