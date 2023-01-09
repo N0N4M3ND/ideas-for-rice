@@ -1,0 +1,318 @@
+[bar/example]
+width = 100%
+height = 40
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = Iosevka:size=15:style=bold;5
+font-1 = symbols nerd font:size=15:style=1000-em;3
+
+border-color = ${colors.transparency}
+
+bottom = false
+
+modules-left = rl1 menu rr1 sep rl1 updates rr1 sep rl1 pulseaudio rr1
+modules-center = rl bspwm rr
+modules-right = rl xbacklight battery wireless-network wired-network rr sep rl date rr sep powermenu
+
+padding-left = 0
+padding-right = 1
+
+offset-x = 0% 
+offset-y = 0%
+
+[colors]
+alert = #f92672
+background = #000000
+foreground = #d1d1d1
+green = #a6e22e
+unfocused = #888888
+transparency = #000
+purple = #ae81ff
+yellow = #f4bf75
+cyan = #66d9ef
+cyan-light = #66d9ef
+
+[module/battery]
+type = internal/battery
+
+adapter = ADP1
+
+animation-charging-0 = ""
+animation-charging-1 = ""
+animation-charging-2 = ""
+animation-charging-3 = ""
+animation-charging-4 = ""
+animation-charging-5 = ""
+animation-charging-6 = ""
+animation-charging-7 = ""
+animation-charging-8 = ""
+
+# animation-charging-background = #hex
+animation-charging-foreground = ${colors.foreground}
+
+battery = BAT0
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+
+full-at = 99
+low-at = 15
+
+label-charging = "%percentage%% "
+label-discharging = "%percentage%% "
+
+# label-charging-background = #hex
+label-charging-foreground = ${colors.foreground}
+
+# label-discharging-background = #hex
+label-discharging-foreground = ${colors.foreground}
+
+label-full = " 99% "
+# label-full-background = #hex
+label-full-foreground = ${colors.foreground}
+
+label-low = " 0% "
+# label-low-background = #hex
+label-low-foreground = ${colors.alert}
+
+ramp-capacity-0 = ""
+ramp-capacity-1 = ""
+ramp-capacity-2 = ""
+ramp-capacity-3 = ""
+ramp-capacity-4 = ""
+ramp-capacity-5 = ""
+ramp-capacity-6 = ""
+ramp-capacity-7 = ""
+ramp-capacity-8 = ""
+
+# ramp-capacity-background = #hex
+ramp-capacity-foreground = ${colors.foreground}
+
+[module/bspwm]
+type = internal/bspwm
+
+label-empty = " "
+# label-empty-background = #hex
+label-empty-foreground = ${colors.unfocused}
+
+label-focused = " "
+# label-focused-background = #hex
+label-focused-foreground = ${colors.foreground}
+
+label-occupied = " "
+# label-occupied-background = #hex
+label-occupied-foreground = ${colors.foreground}
+
+label-urgent = " "
+# label-urgent-background = #hex
+label-urgent-foreground = ${colors.alert}
+
+[module/cpu]
+type = internal/cpu
+
+interval = 1
+
+label = " %percentage%% "
+# label-background = #hex
+label-foreground = ${colors.foreground}
+
+[module/date]
+type = internal/date
+
+date = %H:%M
+date-alt = %a %d, %H:%M %p
+
+interval = 1
+
+label = "emoji %date%"
+# label-background = #hex
+label-foreground = ${colors.foreground}
+
+[module/menu]
+type = custom/text
+
+click-left = rofi -show drun
+content = " menu "
+content-background = ${colors.unfocused}
+content-foreground = ${colors.foreground}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+bar-volume-width = 10
+
+bar-volume-indicator = 雷
+# bar-volume-indicator-background = #hex
+bar-volume-indicator-foreground = ${colors.foreground}
+
+bar-volume-fill = "絛"
+# bar-volume-fill-background = #hex
+bar-volume-fill-foreground = ${colors.green}
+
+bar-volume-empty = "絛"
+# bar-volume-empty-background = #hex
+bar-volume-empty-foreground = ${colors.foreground}
+
+format-volume = <ramp-volume> <bar-volume>
+
+label-muted = "off "
+
+# label-muted-background = #hex
+label-muted-foreground = ${colors.foreground}
+
+ramp-volume-0 = "奄"
+ramp-volume-1 = "奔"
+ramp-volume-2 = "墳"
+
+# ramp-volume-background = #hex
+ramp-volume-foreground = ${colors.foreground}
+
+[module/powermenu]
+type = custom/text
+
+click-left = rofi -show drun
+content = " power "
+# content-background = #hex
+content-foreground = ${colors.foreground}
+
+[module/rl1]
+type = custom/text
+
+content = " "
+# content-background = #hex
+content-foreground = ${colors.foreground}
+
+[module/rr1]
+type = custom/text
+
+content = ""
+# content-background = #hex
+content-foreground = ${colors.foreground}
+
+[module/rl2]
+type = custom/text
+
+content = " "
+# content-background = #hex
+content-foreground = ${colors.foreground}
+
+[module/rr2]
+type = custom/text
+
+content = " "
+# content-background = #hex
+content-foreground = ${colors.foreground}
+
+
+[module/sep]
+type = custom/text
+
+content = " "
+# content-background = #hex
+content-foreground = ${colors.foreground}
+
+[module/text]
+type = custom/text
+
+content = "some text"
+# content-background = #hex
+content-foreground = ${colors.foreground}
+
+[module/updates]
+type = custom/script
+
+content = "somthing"
+# content-background = #hex
+content-foreground = ${colors.foreground}
+
+[module/wired-network]
+type = internal/network
+
+interface = enp0s25
+interface-type = wired
+
+interval = 1
+ping-interval = 30
+
+format-connected = <label-connnected>
+format-disconnected = <label-disconnected>
+
+label-connected = " %essid:0:3:%"
+# label-connected-background = #hex
+label-connected-foreground = ${colors.foreground}
+
+label-disconnected = ""
+# label-disconnected-background = #hex
+label-disconnected-foreground = ${colors.foreground}
+
+[module/wireless-network]
+type = internal/network
+
+interface = wlp2s0
+interface-type = wireless
+
+interval = 1
+ping-interval = 30
+
+format-connected =  <ramp-signal> <label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected = "%essid:0:3:%"
+
+# label-connected-background = #hex
+label-connected-foreground = ${colors.foreground}
+
+label-disconnected = "off"
+
+# label-disconnected-background = #hex
+label-disconnected-foreground = ${colors.foreground}
+
+# ramp-signal-background = #hex
+ramp-signal-foreground = ${colors.foreground}
+
+ramp-signal-0 = emoji1
+ramp-signal-1 = emoji2etc
+
+[module/xbacklight]
+type = internal/xbacklight
+
+output = eDP1
+
+format = <ramp> <label>
+
+label = "%percentage%% "
+
+# label-background = #hex
+label-foreground = ${colors.foreground}
+
+ramp-0 = ""
+ramp-1 = ""
+
+# ramp-background = #hex
+ramp-foreground = ${colors.foreground}
+
+[module/xkeyboard]
+type = internal/xkeyboard
+
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+label-indicator-on-capslock = "caps "
+label-indicator-off-capslock = ""
+
+# label-indicator-off-capslock-background = #hex
+label-indicator-off-capslock-foreground = ${colors.foreground}
+
+# label-indicator-on-capslock-background = #hex
+label-indicator-on-capslock-foreground = ${colors.foreground}
+
+label-layout = ""
+
+[module/xwindow]
+type = internal/xwindow
+
+label = " .%title:0:10:%"
+label-background = ${colors.unfocused}
+label-foreground = ${colors.foreground}
