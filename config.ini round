@@ -1,20 +1,20 @@
 [bar/example]
 width = 100%
-height = 40
+height = 4.2%
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-font-0 = Iosevka:size=15:style=bold;5
+font-0 = iosevka:size=15:style=bold;5
 font-1 = symbols nerd font:size=15:style=1000-em;3
 
 border-color = ${colors.transparency}
 
 bottom = false
 
-modules-left = rl1 menu rr1 sep rl1 updates rr1 sep rl1 pulseaudio rr1
-modules-center = rl bspwm rr
-modules-right = rl xbacklight battery wireless-network wired-network rr sep rl date rr sep powermenu
+modules-left = rl1 menu rr1 sep rl1 pulseaudio rr1
+modules-center = rl1 bspwm rrb
+modules-right = rl1 xbacklight battery wireless-network wired-network rr1 sep rl1 date rr1 sep rl1 powermenu rr1
 
 padding-left = 0
 padding-right = 1
@@ -39,18 +39,19 @@ type = internal/battery
 
 adapter = ADP1
 
-animation-charging-0 = ""
-animation-charging-1 = ""
-animation-charging-2 = ""
-animation-charging-3 = ""
-animation-charging-4 = ""
-animation-charging-5 = ""
-animation-charging-6 = ""
-animation-charging-7 = ""
-animation-charging-8 = ""
+animation-charging-0 = ""
+animation-charging-1 = ""
+animation-charging-2 = ""
+animation-charging-3 = ""
+animation-charging-4 = ""
+animation-charging-5 = ""
+animation-charging-6 = ""
+animation-charging-7 = ""
 
 # animation-charging-background = #hex
 animation-charging-foreground = ${colors.foreground}
+
+animation-charging-framerate = 100
 
 battery = BAT0
 
@@ -77,15 +78,14 @@ label-low = " 0% "
 # label-low-background = #hex
 label-low-foreground = ${colors.alert}
 
-ramp-capacity-0 = ""
-ramp-capacity-1 = ""
-ramp-capacity-2 = ""
-ramp-capacity-3 = ""
-ramp-capacity-4 = ""
-ramp-capacity-5 = ""
-ramp-capacity-6 = ""
-ramp-capacity-7 = ""
-ramp-capacity-8 = ""
+ramp-capacity-0 = ""
+ramp-capacity-1 = ""
+ramp-capacity-2 = ""
+ramp-capacity-3 = ""
+ramp-capacity-4 = ""
+ramp-capacity-5 = ""
+ramp-capacity-6 = ""
+ramp-capacity-7 = ""
 
 # ramp-capacity-background = #hex
 ramp-capacity-foreground = ${colors.foreground}
@@ -126,7 +126,7 @@ date-alt = %a %d, %H:%M %p
 
 interval = 1
 
-label = "emoji %date%"
+label = " %date%"
 # label-background = #hex
 label-foreground = ${colors.foreground}
 
@@ -134,7 +134,7 @@ label-foreground = ${colors.foreground}
 type = custom/text
 
 click-left = rofi -show drun
-content = " menu "
+content = "異"
 content-background = ${colors.unfocused}
 content-foreground = ${colors.foreground}
 
@@ -173,7 +173,7 @@ ramp-volume-foreground = ${colors.foreground}
 type = custom/text
 
 click-left = rofi -show drun
-content = " power "
+content = ""
 # content-background = #hex
 content-foreground = ${colors.foreground}
 
@@ -191,20 +191,12 @@ content = ""
 # content-background = #hex
 content-foreground = ${colors.foreground}
 
-[module/rl2]
-type = custom/text
-
-content = " "
-# content-background = #hex
-content-foreground = ${colors.foreground}
-
-[module/rr2]
+[module/rrb]
 type = custom/text
 
 content = " "
 # content-background = #hex
 content-foreground = ${colors.foreground}
-
 
 [module/sep]
 type = custom/text
@@ -264,7 +256,7 @@ label-connected = "%essid:0:3:%"
 # label-connected-background = #hex
 label-connected-foreground = ${colors.foreground}
 
-label-disconnected = "off"
+label-disconnected = "睊"
 
 # label-disconnected-background = #hex
 label-disconnected-foreground = ${colors.foreground}
@@ -272,8 +264,7 @@ label-disconnected-foreground = ${colors.foreground}
 # ramp-signal-background = #hex
 ramp-signal-foreground = ${colors.foreground}
 
-ramp-signal-0 = emoji1
-ramp-signal-1 = emoji2etc
+ramp-signal-0 = "直"
 
 [module/xbacklight]
 type = internal/xbacklight
